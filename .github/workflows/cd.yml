@@ -21,7 +21,9 @@ jobs:
           path: |
             vendor
           key: ${{ runner.os }}-${{ hashFiles('composer.lock') }}
-          
+      - name: "Composer install"
+        run: composer install --no-interaction --no-progress
+
       # Runs a single command using the runners shell
       - name: LS
         run: ls
